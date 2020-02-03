@@ -14,12 +14,12 @@ func main() {
 		return
 	}
 
+	delimiter := flag.String("d", " ", "Delimiter: Used to split input. Defaults to whitespace")
+	index := flag.Int("i", 0, "Index: Print only the values from this index.")
+
 	s := bufio.NewScanner(os.Stdin)
 	for s.Scan() {
 		str := s.Text()
-
-		delimiter := flag.String("d", " ", "Delimiter: Used to split input. Defaults to whitespace")
-		index := flag.Int("i", 0, "Index: Print only the values from this index.")
 
 		flag.Parse()
 
